@@ -45,8 +45,9 @@ public class TareaService {
         return tareaRepo.tareasSegunUsuario(dni);
     }
 
-    public void completarTarea(Long id){
+    public void completarTarea(Long id) {
         Tarea tarea = tareaRepo.findById(id).orElseThrow(() -> new RuntimeException("Tarea no encontrada"));
         tarea.setEstado(true);
+        tareaRepo.save(tarea);
     }
 }

@@ -45,6 +45,8 @@ public class TareaController {
 
     @PatchMapping("/{id}/completar")
     public void completarTarea(@PathVariable Long id){
+        service.completarTarea(id);
+
 
     }
 
